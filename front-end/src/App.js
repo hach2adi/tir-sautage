@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './composants/HomePage';
@@ -11,16 +10,15 @@ import SidBar from './composants/Sidebar';
 import DashboardPage from './composants/DashboardPage';
 import ArchivePage from './composants/ArchivePage';
 import SecurityPage from './composants/SecurityPage';
+import Login from './composants/Login';
 
 
 function App() {
-
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
-
 
   return (
     <div className={`app-container ${isSidebarOpen ? 'sidebar-open' : ''}`}>
@@ -36,6 +34,7 @@ function App() {
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/archive" element={<ArchivePage />} /> 
         <Route path="/security" element={<SecurityPage/>} /> 
+        <Route path="/Login" element={<Login/>} />
       </Routes>
     </Router>
    </div> 
